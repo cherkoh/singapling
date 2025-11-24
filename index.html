@@ -1,35 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SingaPling – Home</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 40px; }
-        nav a { margin-right: 20px; font-size: 18px; }
-        .chatbox { margin-top: 40px; }
-    </style>
-</head>
-<body>
-
-    <h1>Welcome to SingaPling</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="faq.html">FAQ</a>
-        <a href="pricing.html">Pricing</a>
-    </nav>
-
-    <p>This is the homepage. Ask our virtual assistant anything below.</p>
-
-    <div class="chatbox">
-        <h3>Ask SingaPling</h3>
-        <input id="userInput" type="text" placeholder="Ask a question..." style="width:300px;">
-        <button onclick="sendQuestion()">Send</button>
-
-        <p><strong>Response:</strong></p>
-        <div id="responseBox"></div>
-    </div>
-
 <script>
 // TODO: Replace YOUR_SPACE and YOUR_CHATFLOW_ID with your own values below
 async function query(data) {
@@ -46,13 +14,5 @@ async function query(data) {
     const result = await response.json();
     return result;
 }
-
-async function sendQuestion() {
-    const question = document.getElementById("userInput").value;
-    const reply = await query({ question: question });
-    document.getElementById("responseBox").innerText = JSON.stringify(reply);
-}
 </script>
 
-</body>
-</html>
